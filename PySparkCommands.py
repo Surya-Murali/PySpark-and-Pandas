@@ -63,3 +63,30 @@ rdd4 = sc.parallelize([("a",["x","y","z"]), ("b",["l", "m"])])
 
 textFile = sc.textFile("/my/directory/*.txt")
 textFile2 = sc.wholeTextFiles("/my/directory/")
+
+#Retrieving RDD Information 
+#Basic Information
+
+#List the number of partitions
+rdd.getNumPartitions() 
+
+#Count RDD instances
+rdd.count()  
+#3
+
+#Count RDD instances by key
+rdd.countByKey() 
+defaultdict(<type 'int'>,{'a':1,'b':2})
+
+#Count RDD instances by value
+rdd.countByValue() 
+defaultdict(<type 'int'>,{('b',2):1,('a',5):1,('a',6):1})
+
+#Return (key,value) pairs as a dictionary
+rdd.collectAsMap() 
+
+#Sum of RDD elements
+rdd3.sum() 
+
+#Check whether RDD is empty
+sc.parallelize([]).isEmpty()
