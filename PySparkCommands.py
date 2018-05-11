@@ -90,3 +90,81 @@ rdd3.sum()
 
 #Check whether RDD is empty
 sc.parallelize([]).isEmpty()
+
+#Summary
+
+#Maximum value of RDD elements
+rdd3.max()
+  
+#Minimum value of RDD elements
+rdd3.min() 
+
+#Mean value of RDD elements
+rdd3.mean()
+
+#Standard Deviation value of RDD elements
+rdd3.stdev()
+
+#Variance value of RDD elements
+rdd3.variance()
+
+#Compute histogram by bins
+rdd3.histogram(3)
+
+#Summary statistics (count, mean, stdev, max & min)
+rdd3.stats()
+
+#Applying Functions
+
+#Apply a function to each RDD element
+rdd.map(lambda x: x+(x[1],x[0])) 
+
+#Apply a function to each RDD element and flatten the result
+rdd5 = rdd.flatMap(lambda x: x+(x[1],x[0]))
+rdd5.collect()
+
+#Apply a flatMap function to each (key,value) pair of rdd4 without changing the keys
+rdd4.flatMapValues(lambda x: x).collect()
+
+#Selecting Data
+
+#Getting
+#Return a list with all RDD elements
+rdd.collect()
+
+rdd.take(2)
+
+rdd.first()
+
+rdd.top(2) 
+  
+#Sampling
+
+rdd3.sample(False, 0.15, 81).collect() 
+
+#Filtering
+
+rdd.filter(lambda x: "a" in x).collect()
+
+rdd5.distinct().collect()
+    
+rdd.keys().collect() 
+      
+#Iterating
+
+def g(x): print(x)
+
+rdd.foreach(g) 
+      
+#Reducing 
+
+rdd.reduceByKey(lambda x,y : x+y).collect()     
+
+rdd.reduce(lambda a, b: a + b) 
+
+
+  
+  
+  
+  
+  
