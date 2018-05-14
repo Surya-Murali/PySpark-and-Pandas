@@ -74,8 +74,73 @@ s[~(s > 1)]
 s[(s < -1) | (s > 2)] 
 
 #Use filter to adjust DataFrame
-df[df['Population']>1200000000] 
+df[df['Country'] == 'India'] 
 
 #Setting
 #Set index a of Series s to 6
 s['a'] = 6 
+
+#Read and Write to SQL Query or Database Table
+from sqlalchemy import create_engine
+engine = create_engine('sqlite:///:memory:')
+pd.read_sql("SELECT * FROM my_table;", engine)
+pd.read_sql_table('my_table', engine)
+pd.read_sql_query("SELECT * FROM my_table;", engine)
+
+#read_sql()is a convenience wrapper around read_sql_table() and read_sql_query()
+pd.to_sql('myDf', engine)
+
+#Dropping
+#Drop values from rows (axis=0)
+s.drop(['a', 'c']) 
+#Drop values from columns(axis=1)
+df.drop('Country', axis=1) 
+
+#Sort & Rank
+#Sort by labels along an axis
+df.sort_index() 
+
+#Sort by the values along an axis
+df.sort_values(by='Country')
+#Assign ranks to entries
+df.rank() 
+
+#Retrieving Series/DataFrame Information
+#Basic Information
+#(rows,columns)
+df.shape 
+
+#Describe index
+df.index 
+
+#Describe DataFrame columns
+df.columns
+
+#Info on DataFrame
+df.info() 
+
+#Number of non-NA values
+df.count() 
+
+#Summary
+#Sum of values
+df.sum() 
+
+#Cummulative sum of values
+df.cumsum() 
+
+#Minimum/maximum values
+df.min()/df.max() 
+
+#Minimum/Maximum index value
+df.idxmin()/df.idxmax() 
+
+#Summary statistics
+df.describe() 
+
+#Mean of values
+df.mean() 
+
+#Median of values
+df.median() 
+
