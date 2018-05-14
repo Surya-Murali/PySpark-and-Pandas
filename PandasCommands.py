@@ -144,3 +144,31 @@ df.mean()
 #Median of values
 df.median() 
 
+#Applying Functions
+f = lambda x: x*2
+#Apply function
+df.apply(f) 
+#Apply function element-wise
+df.applymap(f) 
+
+#Data Alignment
+#Internal Data Alignment
+#NA values are introduced in the indices that don’t overlap:
+s3 = pd.Series([2, 5, 6], index=['a', 'c', 'd'])
+s + s3
+# a 4.0
+# b NaN
+# c 11.0
+# d -86
+
+#Arithmetic Operations with Fill Methods
+#You can also do the internal data alignment yourself with the help of the fill methods:
+
+s.add(s3, fill_value=0)
+# a 4.0
+# b 5.0
+# c 11.0
+# d -86
+s.sub(s3, fill_value=2)
+s.div(s3, fill_value=4)
+s.mul(s3, fill_value=3)
