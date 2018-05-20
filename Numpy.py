@@ -1,4 +1,12 @@
-#Bye Bye Cincinnaattttiiiiiiiiti. California - first day - May 17, 2018
+# Bye Bye Cincinnaattttiiiiiiiiti. California - first day - May 17, 2018
+
+# In the terminal, type:
+# pip install pandas
+# pip install numpy 
+
+# For Python3,
+# pip3 install pandas
+# pip3 install numpy 
 
 import numpy as np
 import pandas as pd
