@@ -14,6 +14,8 @@ import pandas as pd
 print("Hello World!")
 print(np)
 
+print("*********************** LIST ***********************")
+
 # List
 L = [1,2,3]
 print(L)
@@ -49,7 +51,7 @@ for i in L2:
     LSquared.append(i*i)
 print(LSquared)
 
-print("############################################")
+print("*********************** ARRAYS ***********************")
 
 # Arrays
 A = np.array([1,2,3])
@@ -87,7 +89,7 @@ print(A2**3)
 # List - convenient for appending/ concatenation. For vector operations, for loop has to be used.
 # But for loops are slow in Python. Hence, numpy arrays are recommended in these cases.
 
-print("############################################")
+print("*********************** DOT PRODUCT ***********************")
 
 #Dot Product
 a = np.array([1,2])
@@ -119,7 +121,7 @@ print(np.dot(a,b))
 print(a.dot(b))
 print(b.dot(a))
 
-# Matrix:
+print("*********************** MATRIX ***********************")
 
 M = np.array([ [1,2], [3,4] ])
 print(M)
@@ -151,7 +153,7 @@ print(A.T)
 # The official documentation suggests against using a Matrix in Python.
 # If you see a matrix, convert to a numpy array.
 
-print("############################################")
+print("*********************** DIFFERENT WAYS OF GENERATING ARRAYS ***********************")
 
 # Different ways of generating arrays:
 
@@ -183,7 +185,7 @@ G = np.random.randn(10,10)
 print(G.mean())
 print(G.var())
 
-print("############################################")
+print("*********************** SOLVING LINEAR EQUATIONS ***********************")
 
 # Word Problem:
 # The admission fee at a fair is $2.50 for children and $5 for adults.
@@ -193,14 +195,14 @@ print("############################################")
 # So, x + y = 300
 # And, 2.5*x + 5*y = 1250
 
-a = np.array([[1, 2.5], [2.5, 5]])
+a = np.array([[1, 1], [2.5, 5]])
 b = np.array([[300, 1250]])
 # Solve Function
 answer = np.linalg.solve(a, b)
 
 print(answer)
 
-print("############################################")
+print("*********************** SPEED COMPARISON ***********************")
 
 from __future__ import print_function, division
 from builtins import range
