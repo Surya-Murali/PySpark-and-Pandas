@@ -183,7 +183,24 @@ G = np.random.randn(10,10)
 print(G.mean())
 print(G.var())
 
-###########################################################
+print("############################################")
+
+# Word Problem:
+# The admission fee at a fair is $2.50 for children and $5 for adults.
+# On a certain day, 300 people enter and $1250 is collected.
+# How many children and adults attended the fair?
+
+# So, x + y = 300
+# And, 2.5*x + 5*y = 1250
+
+a = np.array([[1, 2.5], [2.5, 5]])
+b = np.array([[300, 1250]])
+# Solve Function
+answer = np.linalg.solve(a, b)
+
+print(answer)
+
+print("############################################")
 
 from __future__ import print_function, division
 from builtins import range
